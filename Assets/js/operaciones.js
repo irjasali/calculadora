@@ -20,7 +20,54 @@ const referenciasBotones = () => {
   const reset = document.getElementById("reset");
 };
 
+function addEvent(element, eventName, callback) {
+  if (element.addEventListener) {
+      element.addEventListener(eventName, callback, false);
+  } else if (element.attachEvent) {
+      element.attachEvent("on" + eventName, callback);
+  } else {
+      element["on" + eventName] = callback;
+  }
+}
+
+
+
+
+// var teclaPresionada = false;
+
+// addEvent(document, "keypress", function (e) {
+
+//   if(!teclaPresionada){
+  
+//     console.log("Tecla Presionada");
+  
+//     teclaPresionada = true;
+//   }
+  
+// });
+
+
+// addEvent(document, "keyup", function (e) {
+
+//   if(teclaPresionada){
+  
+//     console.log("Tecla Liberada");
+  
+//     teclaPresionada = false;
+//   }
+  
+// });
+
 referenciasBotones();
+
+
+addEvent(document,"keypress", (e) => {
+  if (e.key === "1") {   
+    resultado.innerText += "1";1
+  }
+});
+111
+
 
 uno.addEventListener("click", () => {
   resultado.innerText += "1";
@@ -85,6 +132,14 @@ reset.addEventListener("click", () => {
   operandoB = 0;
   operacion = "";
   resultado.innerText = "";
+});
+
+let keyP = document.getElementById("cadena");
+
+uno.addEventListener("keypress", (e) => {
+  if (e.key === "11111") {
+    alert("Hola");
+  }
 });
 
 const resolver = () => {
