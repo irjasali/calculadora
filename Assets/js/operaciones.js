@@ -63,10 +63,90 @@ referenciasBotones();
 
 addEvent(document,"keypress", (e) => {
   if (e.key === "1") {   
-    resultado.innerText += "1";1
+    resultado.innerText += "1";
   }
 });
-111
+addEvent(document,"keypress", (e) => {
+  if (e.key === "2") {   
+    resultado.innerText += "2";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "3") {   
+    resultado.innerText += "3";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "4") {   
+    resultado.innerText += "4";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "5") {   
+    resultado.innerText += "5";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "6") {   
+    resultado.innerText += "6";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "7") {   
+    resultado.innerText += "7";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "8") {   
+    resultado.innerText += "8";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "9") {   
+    resultado.innerText += "9";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "0") {   
+    
+    resultado.innerText += "0";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "+") {   
+    operacion ="+"
+    resultado.innerText += "+";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "-") {   
+    operacion ="-";
+    resultado.innerText += "-";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "*") {   
+    operacion ="*";
+    resultado.innerText += "*";
+  }
+});
+addEvent(document,"keypress", (e) => {
+  if (e.key === "/") {   
+    operacion ="/";
+    resultado.innerText += "/";
+  }
+});
+
+addEvent(document,"keypress", (e) => {
+  if (e.key === "Enter") {   
+    resolver();
+  }
+});
+uno.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    resolver();
+  }
+});
 
 
 uno.addEventListener("click", () => {
@@ -128,19 +208,21 @@ const limpiar = () => {
 
 reset.addEventListener("click", () => {
   limpiar();
-  operandoA = 0;
-  operandoB = 0;
-  operacion = "";
+   operacion = "";
   resultado.innerText = "";
 });
 
-let keyP = document.getElementById("cadena");
 
 uno.addEventListener("keypress", (e) => {
-  if (e.key === "11111") {
-    alert("Hola");
+  if (e.key === "Enter") {
+    resolver();
   }
 });
+
+const  numberFloatpoint = (x) => {
+  return Number.parseFloat(x).toFixed(3);
+}
+
 
 const resolver = () => {
   let res = 0;
@@ -157,6 +239,9 @@ const resolver = () => {
     case "/":
       res = parseFloat(eval(resultado.innerText));
       break;
+    default:
+      res = parseFloat(eval(resultado.innerText));
+      break;
   }
-  resultado.innerText = res;
+  resultado.innerText = numberFloatpoint(res);
 };
