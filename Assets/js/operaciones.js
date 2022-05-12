@@ -62,53 +62,98 @@ referenciasBotones();
 
 
 addEvent(document,"keypress", (e) => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+    igual.focus();
+  } 
   if (e.key === "1") {   
-    resultado.innerText += "1";
+    resultado.innerText += "1"; 
+    resultado.focus(); 
   }
 });
+
 addEvent(document,"keypress", (e) => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+    igual.focus();
+  } 
   if (e.key === "2") {   
     resultado.innerText += "2";
+    resultado.focus();  
   }
 });
 addEvent(document,"keypress", (e) => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+    igual.focus();
+  } 
   if (e.key === "3") {   
     resultado.innerText += "3";
+    resultado.focus();  
   }
 });
 addEvent(document,"keypress", (e) => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+    igual.focus();
+  } 
   if (e.key === "4") {   
     resultado.innerText += "4";
+    resultado.focus();  
   }
 });
 addEvent(document,"keypress", (e) => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+    igual.focus();
+  } 
   if (e.key === "5") {   
     resultado.innerText += "5";
+    resultado.focus();  
   }
 });
 addEvent(document,"keypress", (e) => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+    igual.focus();
+  } 
   if (e.key === "6") {   
     resultado.innerText += "6";
+    resultado.focus();  
   }
 });
 addEvent(document,"keypress", (e) => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+    igual.focus();
+  } 
   if (e.key === "7") {   
     resultado.innerText += "7";
+    resultado.focus(); 
   }
 });
 addEvent(document,"keypress", (e) => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+    igual.focus();
+  } 
   if (e.key === "8") {   
     resultado.innerText += "8";
+    resultado.focus(); 
   }
 });
 addEvent(document,"keypress", (e) => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+    igual.focus();
+  } 
   if (e.key === "9") {   
     resultado.innerText += "9";
+    resultado.focus();
   }
 });
 addEvent(document,"keypress", (e) => {
   if (e.key === "0") {   
-    
     resultado.innerText += "0";
   }
 });
@@ -142,46 +187,75 @@ addEvent(document,"keypress", (e) => {
     resolver();
   }
 });
-uno.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    resolver();
-  }
-});
 
+const limpiarDisplay=()=>{
+  resultado.innerText = "";
+}
 
 uno.addEventListener("click", () => {
+  console.log(resultado.innerText)
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+  } 
   resultado.innerText += "1";
+  
+
 });
 dos.addEventListener("click", () => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+  } 
   resultado.innerText += "2";
 });
 tres.addEventListener("click", () => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+  } 
   resultado.innerText += "3";
 });
 cuatro.addEventListener("click", () => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+  } 
   resultado.innerText += "4";
 });
 cinco.addEventListener("click", () => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+  } 
   resultado.innerText += "5";
 });
 seis.addEventListener("click", () => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+  } 
   resultado.innerText += "6";
 });
 siete.addEventListener("click", () => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+  } 
   resultado.innerText += "7";
 });
 ocho.addEventListener("click", () => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+  } 
   resultado.innerText += "8";
 });
 nueve.addEventListener("click", () => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+  } 
   resultado.innerText += "9";
 });
 cero.addEventListener("click", () => {
+  if (resultado.innerText ==="0") {
+    limpiarDisplay();
+  } 
   resultado.innerText += "0";
 });
-reset.addEventListener("click", () => {
-  resultado.innerText = "";
-});
+
 suma.addEventListener("click", () => {
   operacion = "+";
   resultado.innerText += operacion;
@@ -198,26 +272,31 @@ division.addEventListener("click", () => {
   operacion = "/";
   resultado.innerText += operacion;
 });
+
 igual.addEventListener("click", () => {
+  if (resultado.innerText ==="") {
+    resultado.innerText ="0";
+  } else {
   resolver();
+  }
 });
 
 const limpiar = () => {
-  resultado.innerText = "";
+  resultado.innerText = "0";
 };
 
 reset.addEventListener("click", () => {
+  if ( (resultado.innerText!="") || (resultado.innerText ==="")) {
+    resultado.innerText = "0";
+    igual.focus();
+  }  
   limpiar();
    operacion = "";
-  resultado.innerText = "";
+ 
 });
 
 
-uno.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    resolver();
-  }
-});
+
 
 const  numberFloatpoint = (x) => {
   return Number.parseFloat(x).toFixed(3);
@@ -244,4 +323,5 @@ const resolver = () => {
       break;
   }
   resultado.innerText = numberFloatpoint(res);
+
 };
